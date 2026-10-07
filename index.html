@@ -6,10 +6,19 @@
   <meta name="theme-color" content="#173e49">
   <meta name="description" content="一个帮助理解个人选择与社会情境的选座位小游戏。五轮选择，无需登录，适合手机和社会学课堂。">
   <title>你为什么坐在这里？ · 社会学选座小游戏</title>
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css">
-  <script defer src="./engine.js"></script>
-  <script defer src="./app.js"></script>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxNzNlNDkiLz48dGV4dCB4PSIzMiIgeT0iNDQiIGZvbnQtc2l6ZT0iNDAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZjdmN2YwIj7luqc8L3RleHQ+PC9zdmc+Cg==" type="image/svg+xml">
+  <style>
+:root{--navy:#173e49;--teal:#18716b;--paper:#f7f7f0;--ink:#233f48;--muted:#61777a;--line:#d9e2db;--light:#e8f1ec;--warm:#d9aa63;--white:#fff;--radius:20px;color-scheme:light;font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0;min-width:300px}button,input,textarea{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}button:disabled{cursor:default}a{color:inherit}button,input,textarea,a{outline-offset:5px}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--teal)}h1:focus{outline:none}h1,h2,h3,p{margin:0}h1{font-weight:750;letter-spacing:-.035em;line-height:1.16}h2{font-size:22px;line-height:1.45}p{line-height:1.75}button{border:0}button[hidden],[hidden]{display:none!important}.site-header{max-width:1080px;margin:auto;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:700;line-height:1.3}.brand-mark{background:var(--navy);color:var(--paper);font-size:23px;display:grid;place-items:center;width:42px;height:42px;border-radius:13px}.brand-sub{display:block;font-size:11px;font-weight:500;color:var(--muted);margin-top:3px;letter-spacing:.12em}.text-button{background:none;color:var(--teal);font-size:14px;min-height:44px;padding:10px 8px;white-space:nowrap;font-weight:650}.text-button:hover{color:var(--navy);text-decoration:underline}.site-footer{text-align:center;padding:28px 20px;font-size:12px;color:var(--muted)}main{max-width:1080px;padding:24px 32px 8px;margin:auto;outline:none}.eyebrow{font-size:12px;font-weight:650;letter-spacing:.1em;color:var(--teal);margin-bottom:18px}.primary-button,.secondary-button{border-radius:13px;padding:16px 22px;font-weight:650;font-size:16px;min-height:54px;display:inline-flex;justify-content:center;align-items:center;gap:24px}.primary-button{background:var(--navy);color:white;box-shadow:0 4px 0 #102e35}.primary-button:hover{background:#23515b}.primary-button:active{transform:translateY(2px);box-shadow:0 2px 0 #102e35}.primary-button:disabled{background:#c3cfca;box-shadow:none;color:#536c6c}.secondary-button{border:1px solid var(--line);background:transparent;color:var(--navy)}.secondary-button:hover{background:var(--light)}.accent{color:var(--teal)}.welcome{display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:64px;padding:40px 0 34px}.welcome h1{font-size:clamp(45px,5.7vw,68px)}.welcome-lead{font-size:19px;color:var(--muted);margin-top:24px}.game-facts{display:flex;flex-wrap:wrap;gap:20px;margin:28px 0 32px;font-size:13px;color:var(--muted)}.game-facts strong{font-size:20px;color:var(--navy)}.start-button{min-width:220px;justify-content:space-between}.restart-link{display:block;margin-top:12px}.welcome-note{font-size:12px;color:var(--muted);margin-top:23px}.welcome-classroom{padding:36px;background:#e8efdf;border-radius:35% 35% 24px 24px;transform:rotate(3deg);max-width:420px;width:100%;justify-self:end}.mini-board{background:var(--navy);color:#d8e7df;padding:12px;text-align:center;font-size:12px;border-radius:8px;margin:20px 0 28px}.mini-seats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px}.mini-seat{height:40px;border:2px solid #bacabd;border-top-width:7px;border-radius:7px 7px 13px 13px;background:#f7f8ee;display:grid;place-items:center;font-size:14px;font-weight:bold;color:white;animation:arrive .55s both;animation-delay:var(--delay)}.mini-selected{background:var(--teal);border-color:var(--teal);transform:rotate(-7deg)}.mini-caption{font-size:12px;text-align:center;color:var(--muted);margin-top:25px}.round-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:32px}.round-heading .eyebrow{margin:0;white-space:nowrap}.progress{list-style:none;display:flex;gap:18px;padding:0;margin:0}.progress li{display:flex;align-items:center;gap:6px;color:#8b9d98;font-size:11px}.progress li>span:first-child{border:1px solid var(--line);height:25px;width:25px;display:grid;place-items:center;border-radius:50%;font-weight:700}.progress .current{color:var(--navy)}.progress .current>span:first-child{background:var(--navy);border-color:var(--navy);color:white}.progress .done>span:first-child{border-color:#8fb6a8;color:var(--teal);background:var(--light)}.game-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}.scenario h1{font-size:36px}.scenario-description{margin-top:19px;font-size:16px;color:var(--muted);min-height:84px}.condition{display:flex;align-items:baseline;gap:8px;font-size:13px;color:var(--teal);margin:16px 0 30px;padding-top:15px;border-top:1px solid var(--line)}.condition-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex:0 0 7px}.classroom{padding:24px 26px 17px;background:#edf1e8;border:1px solid #d9e0d3;border-radius:22px;max-width:480px;margin:auto}.board{text-align:center;background:var(--navy);color:#e8eee3;border-radius:7px;padding:10px;font-size:13px;letter-spacing:.06em;position:relative}.board span{display:block;font-size:9px;color:#afc8bb;margin-top:2px}.room-sides{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;margin:14px 0 17px}.seats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px 17px}.seat{position:relative;min-height:53px;background:#fff;color:var(--navy);border:1.5px solid #becbbf;border-top:5px solid #b6c7b7;border-radius:6px 6px 13px 13px;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:background .13s,transform .13s,border-color .13s;box-shadow:0 3px 0 #d3ded1}.seat:nth-child(4n+2){margin-right:6px}.seat:nth-child(4n+3){margin-left:6px}.seat.free:hover{border-color:var(--teal);background:#e8f2eb;transform:translateY(-2px)}.seat-icon{height:15px;line-height:15px;font-size:15px;font-weight:700}.seat-label{font-size:11px;line-height:16px;letter-spacing:.04em}.seat.selected{color:#fff;background:var(--teal);border-color:var(--teal);box-shadow:0 3px 0 #115851}.seat.friend{background:#d7eac1;color:#416c3d;border-color:#8fad74;box-shadow:0 3px 0 #c7d7b3}.seat.occupied{background:#d0d8d2;color:#748278;border-color:#bac5bc;box-shadow:0 3px 0 #c1cdc3}.seat.rule{background:transparent;color:#98a69b;border-color:#cad5cb;box-shadow:none;border-style:dashed}.original-dot{width:6px;height:6px;border-radius:50%;background:var(--warm);position:absolute;top:6px;right:6px;outline:1px solid #fff}.back-label{text-align:center;font-size:10px;color:var(--muted);margin:17px 0 15px}.legend{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;font-size:11px;color:var(--muted)}.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{height:9px;width:9px;border-radius:3px;border:1px solid #aebeaf;display:inline-block}.legend-free{background:#fff}.legend-friend{background:#acd38f}.legend-occupied{background:#b9c6ba}.legend-rule{border-style:dashed!important}.legend-original{background:var(--warm);border:0!important;border-radius:50%!important}.choice-panel{scroll-margin-top:16px}.choice-label{font-size:16px;margin-bottom:18px}.choice-label strong{color:var(--teal)}.reasons{border:0;padding:0;margin:0}.reasons legend{font-size:13px;color:var(--muted);margin-bottom:12px}.reason-options{display:flex;flex-wrap:wrap;gap:9px}.reason-chip{position:relative;cursor:pointer}.reason-chip input{position:absolute;opacity:0;width:1px;height:1px}.reason-chip span{display:block;border:1px solid var(--line);border-radius:10px;font-size:13px;padding:11px 13px;background:#fff;min-height:44px}.reason-chip input:checked+span{background:var(--light);border-color:var(--teal);color:var(--teal);font-weight:650}.reason-chip input:focus-visible+span{outline:3px solid var(--teal);outline-offset:3px}.reasons:disabled{opacity:.45}.reasons:disabled .reason-chip{cursor:default}.other-reason{display:block;font-size:12px;color:var(--muted);margin-top:14px}.other-reason input{width:100%;border:1px solid var(--line);border-radius:9px;margin-top:6px;padding:12px;background:white;font-size:16px;color:var(--ink)}.game-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px}.round-note{font-size:11px;color:var(--muted);margin-top:18px}.results{max-width:920px;margin:auto}.results h1{font-size:43px}.result-highlight{margin:25px 0 36px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:18px}.result-highlight strong{font-size:28px;color:var(--teal);padding:0 4px}.result-return{font-size:13px;color:var(--muted);margin-top:6px}.results-layout{display:grid;grid-template-columns:1fr 1fr;gap:65px}.results-layout h2{font-size:18px;margin-bottom:20px}.journey{list-style:none;padding:0;margin:0}.journey li{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}.journey li:first-child{padding-top:0}.journey-number{color:var(--teal);font-size:13px;font-weight:750}.journey li>div{flex:1;min-width:0}.journey strong{font-size:14px}.journey p{font-size:12px;color:var(--muted);margin-top:3px;overflow-wrap:anywhere}.journey-seat{font-size:20px;font-weight:750;letter-spacing:.02em}.small-note{font-size:12px;color:var(--muted);margin-top:18px}.insights article{margin-bottom:20px}.insights h3{font-size:14px;color:var(--teal);margin-bottom:5px}.insights p{font-size:13px;color:var(--muted);overflow-wrap:anywhere}.reflection{margin-top:36px;padding:28px 30px;background:var(--light);border-radius:18px}.reflection .eyebrow{margin-bottom:12px}.reflection h2{font-size:23px}.reflection label{display:block;font-size:12px;color:var(--muted);margin:20px 0 8px}.reflection textarea{display:block;width:100%;resize:vertical;border:1px solid #c4d5cc;border-radius:10px;padding:13px;font-size:16px;background:#fbfdf8;color:var(--ink)}.reflection-note{font-size:12px;color:var(--teal);margin-top:14px}.result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}dialog{border:0;border-radius:20px;padding:28px;max-width:570px;width:calc(100% - 32px);max-height:85dvh;color:var(--ink);background:var(--paper);box-shadow:0 16px 70px #173e4933}dialog::backdrop{background:#153b4966;backdrop-filter:blur(3px)}.dialog-header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px}.close-button{height:44px;width:44px;border-radius:50%;font-size:28px;color:var(--muted);background:#e8eee6;flex-shrink:0}.teacher-steps{padding-left:24px;line-height:1.6;margin:24px 0}.teacher-steps li{margin-bottom:20px;font-size:14px}.teacher-steps strong{color:var(--teal)}.teacher-steps p{font-size:13px;margin-top:5px;color:var(--muted)}.teacher-note{padding:18px;background:var(--light);border-radius:12px;font-size:13px}.teacher-note p{margin-top:8px}.full-width{width:100%;margin-top:22px}.dialog-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:24px}.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;background:var(--navy);color:white;padding:13px 20px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);width:max-content;box-shadow:0 4px 20px #163b4926;z-index:10}.toast.visible{opacity:1;transform:translate(-50%,0)}.skip-link{position:fixed;top:-80px;left:16px;background:var(--navy);padding:12px 20px;color:white;z-index:100}.skip-link:focus{top:12px}.noscript-message{padding:20px;text-align:center}@keyframes arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+@media(max-width:900px){.progress-name{display:none}.game-layout{gap:32px}.classroom{padding:20px}.seats{gap:12px}.welcome{gap:32px}.welcome-classroom{padding:24px}.results-layout{gap:36px}}
+@media(max-width:760px){.site-header{padding:18px 20px}.brand{font-size:13px}.brand-mark{width:36px;height:36px;font-size:21px}.brand-sub{font-size:10px}.site-header>.text-button{font-size:12px}main{padding:15px 20px 0}.site-footer{padding:25px 18px}.welcome{grid-template-columns:1fr;padding:20px 0 5px;gap:26px}.welcome h1{font-size:48px}.welcome .eyebrow{font-size:11px;margin-bottom:16px}.welcome-lead{font-size:16px;margin-top:18px}.game-facts{margin:22px 0 25px;gap:18px}.welcome-classroom{display:none}.start-button{width:100%;min-height:58px}.welcome-note{margin-top:22px}.round-heading{margin-bottom:20px;gap:10px}.round-heading .eyebrow{font-size:11px}.progress{gap:9px}.progress li>span:first-child{height:23px;width:23px;font-size:10px}.game-layout{display:flex;flex-direction:column;gap:0}.scenario{display:contents}.scenario h1{font-size:28px;order:1}.scenario-description{order:2;font-size:14px;margin:12px 0 0;min-height:0}.condition{order:3;font-size:11px;line-height:1.7;margin:13px 0 18px;padding-top:12px}.board-area{order:4;width:100%}.choice-panel{order:5;width:100%;margin-top:23px}.classroom{padding:18px 19px 15px;border-radius:17px;max-width:440px}.board{font-size:12px;padding:8px}.room-sides{font-size:9px;margin:11px 0 13px}.seats{gap:10px 13px}.seat{min-height:48px;border-top-width:4px}.seat:nth-child(4n+2){margin-right:4px}.seat:nth-child(4n+3){margin-left:4px}.seat-label{font-size:10px}.back-label{margin:13px 0 11px}.legend{font-size:10px;gap:10px}.choice-label{font-size:16px;margin-bottom:15px}.reasons legend{font-size:12px}.reason-chip span{font-size:12px;padding:10px 12px}.game-actions{margin-top:22px;gap:6px}.game-actions>.primary-button{width:100%;justify-content:space-between}.game-actions>.text-button{margin:auto}.round-note{text-align:center;margin-top:11px;font-size:10px}.results h1{font-size:35px}.results>.eyebrow{font-size:11px}.result-highlight{font-size:15px;margin:22px 0 27px;padding:18px 0}.result-highlight strong{font-size:25px}.result-return{font-size:12px}.results-layout{grid-template-columns:1fr;gap:29px}.results-layout h2{font-size:17px;margin-bottom:18px}.journey li{padding:13px 0}.insights{display:grid;grid-template-columns:1fr 1fr;gap:19px 18px}.insights article{margin:0}.insights p{font-size:12px}.reflection{padding:23px 20px;margin-top:27px}.reflection h2{font-size:19px}.reflection .eyebrow{font-size:10px}.result-actions>.primary-button,.result-actions>.secondary-button{flex:1;font-size:13px;padding:14px 12px;white-space:nowrap;gap:8px}.result-actions>.text-button{width:100%}.dialog-header h2{font-size:20px}dialog{padding:22px}dialog>p{font-size:14px}.dialog-actions{gap:8px}.dialog-actions button{font-size:14px;padding:12px 16px}}
+@media(max-width:359px){.site-header{padding:14px 16px}main{padding:12px 16px 0}.welcome h1{font-size:43px}.classroom{padding:15px}.seats{gap:10px}.progress{gap:6px}.seat{min-height:47px}.reason-chip span{padding:10px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{.site-header,.site-footer,.result-actions,.reflection textarea,.reflection label{display:none}body{background:white}.results-layout{display:block}.results h1{font-size:28px}.reflection{break-inside:avoid}.insights{display:grid;grid-template-columns:1fr 1fr;gap:20px}.result-highlight{margin:15px 0}main{max-width:none;padding:0}}
+
+</style>
+  
+  
 </head>
 <body>
   <a class="skip-link" href="#main">跳到游戏内容</a>
@@ -39,5 +48,162 @@
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript><p class="noscript-message">请开启浏览器的 JavaScript 后再玩。游戏无需登录。</p></noscript>
+<script>
+(function (root, factory) {
+  if (typeof module === 'object' && module.exports) module.exports = factory();
+  else root.SeatGame = factory();
+})(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const ROWS = 6, COLS = 4, COUNT = ROWS * COLS, VERSION = 1;
+  const rounds = [
+    { name: '空教室', title: '空教室，随你选', description: '你第一个来到教室，所有座位都空着。你想坐在哪里？', condition: '24 个位置都可以选', concept: '个人偏好', reasons: ['看得清、听得清', '进出方便', '喜欢这个位置', '习惯坐这里', '其他原因'] },
+    { name: '朋友在场', title: '朋友已经坐下了', description: '重新来到这间空教室。你的朋友已经入座，其他位置都空着。你会坐在哪里？', condition: '朋友在场，其他位置都可以选', concept: '人际关系', reasons: ['想靠近朋友', '仍按自己的偏好', '想认识新同学', '位置更方便', '其他原因'] },
+    { name: '空位有限', title: '晚到了一会儿', description: '这一次，你进来时很多位置已有同学。原来的位置也有人，只能从空位中选择。', condition: '只剩 8 个空位', concept: '可选机会', reasons: ['空位有限', '空位中最合心意', '看得清、听得清', '进出方便', '其他原因'] },
+    { name: '课堂规则', title: '这轮有一条规则', description: '重新来到空教室。为了小组讨论，老师请大家坐在前两排。你在这个范围内选哪里？', condition: '前两排可以选，其他位置暂不开放', concept: '规则', reasons: ['遵守本轮规则', '前排更方便交流', '允许范围内最合心意', '想尝试不同位置', '其他原因'] },
+    { name: '再次自由', title: '回到最初的空教室', description: '朋友还没来，所有座位都空着，也没有指定范围。再选一次，你还想坐在原来的位置吗？', condition: '24 个位置都可以选', concept: '重新判断', reasons: ['仍喜欢原来的位置', '体验后改变了偏好', '想尝试新位置', '没有特别理由', '其他原因'] }
+  ];
+  const validSeat = seat => Number.isInteger(seat) && seat >= 0 && seat < COUNT;
+  const label = seat => validSeat(seat) ? String.fromCharCode(65 + Math.floor(seat / COLS)) + (seat % COLS + 1) : '';
+  function scenario(roundIndex, baseline) {
+    if (!Number.isInteger(roundIndex) || roundIndex < 0 || roundIndex >= rounds.length) throw new RangeError('Invalid round');
+    if (roundIndex > 0 && !validSeat(baseline)) throw new RangeError('Baseline seat required');
+    const states = Array(COUNT).fill('free');
+    let friend = null;
+    if (roundIndex === 1) {
+      friend = baseline < 12 ? 21 : 2;
+      states[friend] = 'friend';
+    }
+    if (roundIndex === 2) {
+      // Eight fixed positions span the classroom. Remove the baseline if necessary.
+      let available = [0, 3, 5, 8, 15, 18, 20, 23].filter(seat => seat !== baseline);
+      if (available.length < 8) available.push(Array.from({ length: COUNT }, (_, seat) => seat).find(seat => seat !== baseline && !available.includes(seat)));
+      for (let seat = 0; seat < COUNT; seat++) if (!available.includes(seat)) states[seat] = 'occupied';
+    }
+    if (roundIndex === 3) for (let seat = 8; seat < COUNT; seat++) states[seat] = 'rule';
+    return { ...rounds[roundIndex], index: roundIndex, states, friend, available: states.filter(state => state === 'free').length };
+  }
+  function validateRecords(records) {
+    if (!Array.isArray(records) || records.length > rounds.length) return false;
+    return records.every((record, index) => {
+      if (!record || record.round !== index || !validSeat(record.seat)) return false;
+      if (!rounds[index].reasons.includes(record.reason)) return false;
+      if (typeof record.detail !== 'string' || record.detail.length > 60) return false;
+      if (record.reason === '其他原因' && !record.detail.trim()) return false;
+      return scenario(index, index ? records[0].seat : null).states[record.seat] === 'free';
+    });
+  }
+  function parseSaved(raw) {
+    try {
+      const saved = JSON.parse(raw);
+      if (!saved || saved.version !== VERSION || saved.started !== true || !validateRecords(saved.records)) return null;
+      return { version: VERSION, started: true, records: saved.records.map(({ round, seat, reason, detail }) => ({ round, seat, reason, detail })) };
+    } catch (_) { return null; }
+  }
+  function summarize(records) {
+    if (records.length !== rounds.length || !validateRecords(records)) throw new Error('Complete valid records required');
+    const baseline = records[0].seat;
+    return {
+      baseline,
+      final: records[4].seat,
+      changedConditions: records.slice(1, 4).filter(record => record.seat !== baseline).length,
+      finalChanged: records[4].seat !== baseline,
+      rows: records.map((record, index) => ({ ...record, name: rounds[index].name, concept: rounds[index].concept, label: label(record.seat), changed: record.seat !== baseline })),
+      insights: [
+        { heading: '人际关系', text: `朋友在场时，你${records[1].seat === baseline ? '保留了最初的位置' : '换了位置'}。你给出的理由是“${records[1].reason === '其他原因' ? records[1].detail : records[1].reason}”。` },
+        { heading: '可选机会', text: '晚到时，最初的位置已经有人。你只能在剩余的空位中继续作出选择。' },
+        { heading: '规则', text: `规定坐前两排时，你选择了 ${label(records[3].seat)}。规则改变了可以选择的范围。` },
+        { heading: '个人判断', text: `恢复自由选择后，你${records[4].seat === baseline ? '选择了最初的位置' : '选择了一个不同于最初的位置'}。改变或坚持，都可以有自己的理由。` }
+      ]
+    };
+  }
+  function resultText(records, reflection = '') {
+    const summary = summarize(records);
+    return ['我的选座记录', ...summary.rows.map(row => `${row.round + 1}. ${row.name}：${row.label}；理由：${row.reason === '其他原因' ? row.detail : row.reason}`), `三次条件变化中，有 ${summary.changedConditions} 次选择不同于最初的位置。`, `再次自由选择：${summary.finalChanged ? '改变了最初的位置' : '选择了最初的位置'}。`, reflection.trim() ? `我的思考：${reflection.trim()}` : '', '讨论：上大学和选专业时，哪些条件提供机会，哪些条件限制选择？'].filter(Boolean).join('\n');
+  }
+  return { ROWS, COLS, COUNT, VERSION, rounds, validSeat, label, scenario, validateRecords, parseSaved, summarize, resultText };
+});
+
+</script>
+<script>
+(function () {
+  'use strict';
+  const G = window.SeatGame, main = document.querySelector('#main');
+  const STORAGE_KEY = 'sociology-seat-game-v1';
+  const escape = text => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  let records = [], started = false, selected = null, reason = '', detail = '', screen = 'welcome', toastTimer;
+  try { const saved = G.parseSaved(localStorage.getItem(STORAGE_KEY)); if (saved) { records = saved.records; started = true; } } catch (_) {}
+  function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: G.VERSION, started, records })); } catch (_) {} }
+  function notify(text) { const toast = document.querySelector('#toast'); toast.textContent = text; toast.classList.add('visible'); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove('visible'), 2400); }
+  function focusHeading() { const heading = main.querySelector('h1'); if (heading) heading.focus({ preventScroll: true }); window.scrollTo({ top: 0, behavior: 'auto' }); }
+  function welcome() {
+    screen = 'welcome';
+    main.innerHTML = `<section class="welcome"><div class="welcome-copy"><p class="eyebrow">一个关于选择的课堂小游戏</p><h1 tabindex="-1">你为什么<br>坐在<span class="accent">这里？</span></h1><p class="welcome-lead">同一间教室，换个条件。<br>看看你会不会改变位置。</p><div class="game-facts"><span><strong>24</strong> 个座位</span><span><strong>5</strong> 次选择</span><span>约 <strong>3</strong> 分钟</span></div><button class="primary-button start-button" id="start-button">${started ? records.length === 5 ? '查看我的选择' : `继续第 ${records.length + 1} 轮` : '开始选座'}<span aria-hidden="true">↗</span></button>${started ? '<button class="text-button restart-link" data-reset>重新开始</button>' : ''}<p class="welcome-note">没有标准答案，选你想坐的位置。<br>每轮独立，条件不叠加。</p></div><div class="welcome-classroom" aria-hidden="true"><div class="mini-board">黑板 / 讲台</div><div class="mini-seats">${Array.from({ length: 24 }, (_, i) => `<span class="mini-seat ${i === 13 ? 'mini-selected' : ''}" style="--delay:${i * 18}ms">${i === 13 ? '你' : ''}</span>`).join('')}</div><p class="mini-caption">位置很小，背后的理由很多。</p></div></section>`;
+    main.querySelector('#start-button').addEventListener('click', () => { started = true; save(); records.length === 5 ? results() : round(); focusHeading(); });
+    bindResets();
+  }
+  function boardMarkup(s) {
+    return `<div class="classroom"><div class="board">黑板 / 讲台<span>前排</span></div><div class="room-sides"><span>窗边</span><span>过道在中间</span><span>门侧</span></div><div class="seats" role="group" aria-label="教室座位，A 排靠近讲台，F 排在后面">${s.states.map((state, seat) => {
+      const isSelected = selected === seat, original = records.length && seat === records[0].seat;
+      const status = { free: '可选', friend: '朋友已坐', occupied: '已有人', rule: '本轮不开放' }[state];
+      return `<button type="button" class="seat ${state} ${isSelected ? 'selected' : ''} ${original ? 'original' : ''}" data-seat="${seat}" ${state !== 'free' ? 'disabled' : ''} aria-label="${G.label(seat)}，${status}${original ? '，最初的位置' : ''}" aria-pressed="${isSelected}"><span class="seat-icon" aria-hidden="true">${state === 'friend' ? '友' : state === 'occupied' ? '·' : state === 'rule' ? '—' : isSelected ? '✓' : ''}</span><span class="seat-label">${G.label(seat)}</span>${original ? '<span class="original-dot" aria-hidden="true"></span>' : ''}</button>`;
+    }).join('')}</div><div class="back-label">后排</div><div class="legend"><span><i class="legend-free"></i>可选</span>${s.friend !== null ? '<span><i class="legend-friend"></i>朋友</span>' : ''}${s.states.includes('occupied') ? '<span><i class="legend-occupied"></i>已有人</span>' : ''}${s.states.includes('rule') ? '<span><i class="legend-rule"></i>不开放</span>' : ''}${records.length ? '<span><i class="legend-original"></i>最初位置</span>' : ''}</div></div>`;
+  }
+  function round() {
+    screen = 'round'; selected = null; reason = ''; detail = '';
+    renderRound();
+  }
+  function renderRound() {
+    const index = records.length, s = G.scenario(index, index ? records[0].seat : null);
+    main.innerHTML = `<section class="game"><div class="round-heading"><p class="eyebrow">第 ${index + 1} / 5 轮</p><ol class="progress" aria-label="游戏进度">${G.rounds.map((r, i) => `<li class="${i === index ? 'current' : i < index ? 'done' : ''}" ${i === index ? 'aria-current="step"' : ''}><span>${i < index ? '✓' : i + 1}</span><span class="progress-name">${r.name}</span></li>`).join('')}</ol></div><div class="game-layout"><div class="scenario"><h1 tabindex="-1">${s.title}</h1><p class="scenario-description">${s.description}</p><p class="condition"><span class="condition-dot"></span>${s.condition}${s.friend !== null ? ` · 朋友在 ${G.label(s.friend)}` : ''}</p><div class="choice-panel"><p class="choice-label">${selected === null ? '点一个可选的座位' : `你选了 <strong>${G.label(selected)}</strong>`}</p><fieldset class="reasons" ${selected === null ? 'disabled' : ''}><legend>你这样选的主要理由是？</legend><div class="reason-options">${s.reasons.map((text, i) => `<label class="reason-chip"><input type="radio" name="reason" value="${escape(text)}" ${reason === text ? 'checked' : ''}><span>${text}</span></label>`).join('')}</div><label class="other-reason" ${reason !== '其他原因' ? 'hidden' : ''}>简单说说你的理由<input type="text" id="reason-detail" maxlength="60" placeholder="最多 60 字" value="${escape(detail)}" autocomplete="off"></label></fieldset><div class="game-actions"><button class="primary-button" id="next-button" disabled>${index === 4 ? '看我的选择' : '确认，进入下一轮'}<span aria-hidden="true">→</span></button>${index > 0 ? '<button class="text-button" id="back-button">回看上一轮</button>' : ''}</div><p class="round-note">可以坚持，也可以改变。每轮请按自己的想法选。</p></div></div><div class="board-area">${boardMarkup(s)}</div></div></section>`;
+    main.querySelectorAll('[data-seat]').forEach(button => button.addEventListener('click', () => selectSeat(Number(button.dataset.seat))));
+    main.querySelectorAll('[name="reason"]').forEach(input => input.addEventListener('change', () => { reason = input.value; const other = main.querySelector('.other-reason'); other.hidden = reason !== '其他原因'; if (!other.hidden) main.querySelector('#reason-detail').focus(); updateNext(); }));
+    main.querySelector('#reason-detail').addEventListener('input', event => { detail = event.target.value; updateNext(); });
+    main.querySelector('#next-button').addEventListener('click', submit);
+    if (index > 0) main.querySelector('#back-button').addEventListener('click', () => { const previous = records.pop(); selected = previous.seat; reason = previous.reason; detail = previous.detail; save(); renderRound(); focusHeading(); });
+    updateNext();
+  }
+  function selectSeat(seat) {
+    const s = G.scenario(records.length, records.length ? records[0].seat : null);
+    if (s.states[seat] !== 'free') return;
+    selected = seat;
+    main.querySelectorAll('[data-seat]').forEach(button => { const active = Number(button.dataset.seat) === seat; button.classList.toggle('selected', active); button.setAttribute('aria-pressed', String(active)); if (s.states[Number(button.dataset.seat)] === 'free') button.querySelector('.seat-icon').textContent = active ? '✓' : ''; });
+    main.querySelector('.choice-label').innerHTML = `你选了 <strong>${G.label(seat)}</strong>`;
+    main.querySelector('.reasons').disabled = false;
+    updateNext();
+    if (window.matchMedia('(max-width: 760px)').matches) main.querySelector('.choice-panel').scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' });
+  }
+  function reducedMotion() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function updateNext() { const button = main.querySelector('#next-button'); if (button) button.disabled = !(selected !== null && reason && (reason !== '其他原因' || detail.trim())); }
+  function submit() {
+    if (selected === null || !reason || (reason === '其他原因' && !detail.trim())) return;
+    const proposed = [...records, { round: records.length, seat: selected, reason, detail: reason === '其他原因' ? detail.trim() : '' }];
+    if (!G.validateRecords(proposed)) { notify('请重新选择座位和理由'); return; }
+    records = proposed; save(); records.length === 5 ? results() : round(); focusHeading();
+  }
+  function results() {
+    screen = 'results';
+    const summary = G.summarize(records);
+    main.innerHTML = `<section class="results"><p class="eyebrow">五轮完成 · 我的选择记录</p><h1 tabindex="-1">换个条件，<br>选择会怎样？</h1><div class="result-highlight"><p>三次条件变化中，你有 <strong>${summary.changedConditions}</strong> 次选择了不同于最初的位置。</p><p class="result-return">再次自由选择时，你${summary.finalChanged ? '选择了不同的位置' : '选择了最初的位置'}。</p></div><div class="results-layout"><div><h2>你的选座过程</h2><ol class="journey">${summary.rows.map(row => `<li><span class="journey-number">${row.round + 1}</span><div><strong>${row.name}</strong><p>${escape(row.reason === '其他原因' ? row.detail : row.reason)}</p></div><span class="journey-seat">${row.label}</span></li>`).join('')}</ol><p class="small-note">每个选择都有理由。试着把你的理由与当时的条件联系起来。</p></div><div><h2>这些条件影响了什么？</h2><div class="insights">${summary.insights.map(insight => `<article><h3>${insight.heading}</h3><p>${escape(insight.text)}</p></article>`).join('')}</div></div></div><div class="reflection"><p class="eyebrow">回到“为什么上大学”</p><h2>上大学和选专业时，<br>哪些条件提供机会，哪些条件限制选择？</h2><label for="reflection-input">写下一点你的思考（可选）</label><textarea id="reflection-input" maxlength="180" rows="3" placeholder="例如：兴趣、家人、录取条件、就业预期……"></textarea><p class="reflection-note">把个人经历放进社会背景中理解，是社会学的一个起点。</p></div><div class="result-actions"><button class="primary-button" id="copy-result">复制我的记录</button><button class="secondary-button" id="download-result">保存为文字</button><button class="text-button" data-reset>再选一次</button></div></section>`;
+    main.querySelector('#copy-result').addEventListener('click', async () => {
+      const text = G.resultText(records, main.querySelector('#reflection-input').value);
+      try { await navigator.clipboard.writeText(text); notify('记录已复制，可以粘贴分享'); }
+      catch (_) { download(text); notify('已改为保存文字记录'); }
+    });
+    main.querySelector('#download-result').addEventListener('click', () => download(G.resultText(records, main.querySelector('#reflection-input').value)));
+    bindResets();
+  }
+  function download(text) {
+    const url = URL.createObjectURL(new Blob(['\ufeff' + text], { type: 'text/plain;charset=utf-8' }));
+    const link = document.createElement('a'); link.href = url; link.download = '我的选座记录.txt'; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+  function bindResets() { main.querySelectorAll('[data-reset]').forEach(button => button.addEventListener('click', () => document.querySelector('#reset-dialog').showModal())); }
+  document.querySelector('#teacher-button').addEventListener('click', () => document.querySelector('#teacher-dialog').showModal());
+  document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
+  document.querySelector('#confirm-reset').addEventListener('click', () => { records = []; started = true; save(); document.querySelector('#reset-dialog').close(); round(); focusHeading(); });
+  document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if (event.target === dialog) { const rect = dialog.getBoundingClientRect(); if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close(); } }));
+  welcome();
+})();
+
+</script>
 </body>
 </html>
